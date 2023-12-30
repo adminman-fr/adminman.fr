@@ -1,0 +1,9 @@
+title: Documentation
+description: Site de documentation informatique
+theme: just-the-docs
+
+
+# Aux links for the upper right navigation
+aux_links:
+  "adminman sur GitHub":
+    - "https://github.com/adminman-fr/adminman.fr"
