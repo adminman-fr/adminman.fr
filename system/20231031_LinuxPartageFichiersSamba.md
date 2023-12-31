@@ -5,6 +5,8 @@ parent: linux
 grand_parent: system
 ---
 
+{% include youtubePlayer.html id="dQw4w9WgXcQ" %}
+
 # Comment crée un dossier partager avec samba pour windows ?
 ## 1.Installer samba
 ##### Mettre à jour les dépôts & paquets

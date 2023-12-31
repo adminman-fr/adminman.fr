@@ -1,7 +1,7 @@
 ---
 layout: post
 title: disque-dur-en-collision-de-signature
-parent: other
+parent: autre
 ---
 
 **1)** Ouvrir une invitation avec les droits administrateur
@@ -61,3 +61,5 @@ uniqueid disk
 **8)** Il ne reste plus qu'à **déconnecter/reconnecter** le disque dur, il devrait de nouveaux être utilisables.
 
 **[microsoft.com](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc730793(v=ws.11))**
+
+<footer><p>{{ site.time }}</p></footer>

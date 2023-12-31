@@ -1,0 +1,163 @@
+{"0": {
+    "doc": "Samba - Partager un dossier sous linux",
+    "title": "Comment crée un dossier partager avec samba pour windows ?",
+    "content": " ",
+    "url": "/system/20231031_LinuxPartageFichiersSamba.html#comment-cr%C3%A9e-un-dossier-partager-avec-samba-pour-windows-",
+    
+    "relUrl": "/system/20231031_LinuxPartageFichiersSamba.html#comment-crée-un-dossier-partager-avec-samba-pour-windows-"
+  },"1": {
+    "doc": "Samba - Partager un dossier sous linux",
+    "title": "1.Installer samba",
+    "content": "Mettre à jour les dépôts &amp; paquets . # Debian sudo apt-get update &amp;&amp; sudo apt-get upgrade -y . ou . # AlpineLinux apk update &amp;&amp; apk upgrade . Installe le paquet samba . # Debian sudo apt-get install samba . ou . # AlpineLinux apk add samba samba-common-tools . ",
+    "url": "/system/20231031_LinuxPartageFichiersSamba.html#1installer-samba",
+    
+    "relUrl": "/system/20231031_LinuxPartageFichiersSamba.html#1installer-samba"
+  },"2": {
+    "doc": "Samba - Partager un dossier sous linux",
+    "title": "2.Configurer samba",
+    "content": "Créer un dossier pour le partage . mkdir /media/storage . Ajouter les droits sur le dossier de partage . chown 0777 /media/storage . Faire une sauvegarde du fichier de configuration smb.conf . mv /etc/samba/smb.conf /etc/samba/smb.conf.bak . Crée un nouveau fichier de configuration pour samba . vi /etc/samba/smb.conf . # /etc/samba/smb.conf [global] workgroup = WORKGROUP dos charset = cp850 unix charset = ISO-8859-1 force user = sysadmin [storage] browseable = yes writeable = yes path = /media/storage . Crée un nouvel utilisateur unix . Nous allons ensuite créer l’utilisateur unix que nous souhaitons utiliser pour notre partage . adduser sysadmin . Crée un nouvel utilisateur samba . l’on créera cet utilisateur une deuxième fois pour samba . smbpasswd -a sysadmin . Ajouter le service samba à chaque démarrage . # Debian sudo systemctl enable samba . ou . # AlpineLinux rc-update add samba . Redémarre le service samba . # Debian sudo /etc/init.d/smbd restart . ou . # AlpineLinux rc-service samba restart . *Ouvre le port 445 . sudo ufw allow 445/tcp . Connexion au partage . Connectez-vous au partage via explorer de fichier, tapez @ip du serveur linux dans un explorateur de fichier ou la fenétre Exécuter (Win + R). ",
+    "url": "/system/20231031_LinuxPartageFichiersSamba.html#2configurer-samba",
+    
+    "relUrl": "/system/20231031_LinuxPartageFichiersSamba.html#2configurer-samba"
+  },"3": {
+    "doc": "Samba - Partager un dossier sous linux",
+    "title": " ",
+    "content": "sources: . | 📝https://www.malekal.com/monter-partage-windows-linux-samba/ | 📝https://doc.ubuntu-fr.org/samba | 📝https://youtu.be/YWnqIE4cbfg | . ",
+    "url": "/system/20231031_LinuxPartageFichiersSamba.html",
+    
+    "relUrl": "/system/20231031_LinuxPartageFichiersSamba.html"
+  },"4": {
+    "doc": "Samba - Partager un dossier sous linux",
+    "title": "Samba - Partager un dossier sous linux",
+    "content": " ",
+    "url": "/system/20231031_LinuxPartageFichiersSamba.html",
+    
+    "relUrl": "/system/20231031_LinuxPartageFichiersSamba.html"
+  },"5": {
+    "doc": "Windows - Installation silencieuse de logiciel",
+    "title": "Comment installer des logiciels sous Windows en mode silencieux ?",
+    "content": "Nous couvrirons l’installation en mode silencieux de logiciels sous Windows , éliminant ainsi la nécessité d’effectuer des clics manuels fastidieux. Qu’est-ce que l’installation silencieuse ? . L’installation silencieuse (Silent Install) est un processus d’installation de logiciels sur un ordinateur sans nécessiter l’intervention de l’utilisateur. Ce processus est généralement utilisé par les professionnels de l’informatique pour installer plusieurs applications logicielles à la fois. Il est également utilisé pour installer des applications à distance sur plusieurs machines. VLC . Pour installer VLC en mode silencieux, suivez ces étapes : . | Télécharger le fichier d’installation de VLC (par exemple, vlc-3.0.19-win64.exe). | Ouvrez l’invite de commande en tant qu’administrateur. | Naviguez vers le répertoire où se trouve le fichier d’installation de VLC. | Exécutez la commande suivante : .\\vlc-3.0.19-win64.exe /S . | . Firefox . &amp; '.\\Firefox Setup 118.0.2.exe' /S . 7zip .\\7z2301-x64.msi . NotePad++ .\\npp.8.5.8.Installer.x64.exe /S . Assurez-vous de télécharger les fichiers d’installation à partir des sources officielles pour des raisons de sécurité. sources : . | 📝https://tech-lib.fr/installation-silencieuse/ | . ",
+    "url": "/system/20231102_WindowsInstallationLogicielModeSilencieu.html#comment-installer-des-logiciels-sous-windows-en-mode-silencieux-",
+    
+    "relUrl": "/system/20231102_WindowsInstallationLogicielModeSilencieu.html#comment-installer-des-logiciels-sous-windows-en-mode-silencieux-"
+  },"6": {
+    "doc": "Windows - Installation silencieuse de logiciel",
+    "title": "Windows - Installation silencieuse de logiciel",
+    "content": " ",
+    "url": "/system/20231102_WindowsInstallationLogicielModeSilencieu.html",
+    
+    "relUrl": "/system/20231102_WindowsInstallationLogicielModeSilencieu.html"
+  },"7": {
+    "doc": "RustDesk - Créer un serveur sous Alpine Linux",
+    "title": "Créer un serveur RustDesk sous Alpine Linux",
+    "content": "⏩ Pas le temps ? Faites un copier-coller des deux commandes ci-dessous pour créer un serveur RustDesk sous Alpine Linux. adduser -g \"rustdesk\" rustdesk . mkdir -p \\ /var/lib/rustdesk \\ /tmp/rustdesk &amp;&amp; \\ chown -R rustdesk:rustdesk /var/lib/rustdesk/ &amp;&amp; \\ wget https://github.com/rustdesk/rustdesk-server/releases/latest/download/rustdesk-server-linux-amd64.zip -P /tmp/rustdesk/ &amp;&amp; \\ unzip /tmp/rustdesk/rustdesk-server-linux-amd64.zip -d /tmp/rustdesk/ &amp;&amp; \\ cd /tmp/rustdesk/amd64 &amp;&amp; ./hbbr -V ; ./hbbs -V &amp;&amp; \\ cp /tmp/rustdesk/amd64/* /usr/bin/ &amp;&amp;\\ cat &gt; /etc/init.d/hbbs &lt;&lt;EOL #!/sbin/openrc-run # /etc/init.d/hbbs directory=\"/var/lib/rustdesk\" description=\"Serveur de relais RustDesk\" command_background=\"yes\" pidfile=\"/var/run/hbbs.pid\" command=\"/usr/bin/hbbs\" command_args=\"-k _\" user_homedir=\"/home/rustdesk\" command_user=\"rustdesk:rustdesk\" output_log=\"/dev/null\" error_log=\"/dev/null\" depend() { need localmount use net } start_pre() { checkpath --directory \\$output_log checkpath --directory \\$error_log } EOL cat &gt; /etc/init.d/hbbr &lt;&lt;EOL #!/sbin/openrc-run # /etc/init.d/hbbr directory=\"/var/lib/rustdesk\" description=\"Service RustDesk ID\" pidfile=\"/var/run/hbbr.pid\" command=\"/usr/bin/hbbr\" command_args=\"\" command_user=\"rustdesk:rustdesk\" command_background=\"yes\" output_log=\"/dev/null\" error_log=\"/dev/null\" depend() { need localmount use net } start_pre() { checkpath --directory \\$output_log checkpath --directory \\$error_log } EOL chmod +x /etc/init.d/hbb* &amp;&amp; \\ rc-update add hbbr &amp;&amp; \\ rc-update add hbbs &amp;&amp; \\ rc-service hbbr restart ; rc-service hbbs restart &amp;&amp; \\ htop || apk add htop &amp;&amp; \\ ls /var/lib/rustdesk &amp;&amp; \\ cat /var/lib/rustdesk/id_ed25519.pub . Voici le détail des commande à effectuer pour créer le serveur. ",
+    "url": "/system/20231103_LinuxAlpineRustDeskServer.html#cr%C3%A9er-un-serveur-rustdesk-sous-alpine-linux",
+    
+    "relUrl": "/system/20231103_LinuxAlpineRustDeskServer.html#créer-un-serveur-rustdesk-sous-alpine-linux"
+  },"8": {
+    "doc": "RustDesk - Créer un serveur sous Alpine Linux",
+    "title": "Configuration de SSH sur le conteneur Alpine Linux",
+    "content": "Pour configurer SSH sur le conteneur Alpine Linux, vous pouvez exécuter les commandes suivantes : . setup-sshd -&gt; openssh -&gt; yes -&gt; none . ",
+    "url": "/system/20231103_LinuxAlpineRustDeskServer.html#configuration-de-ssh-sur-le-conteneur-alpine-linux",
+    
+    "relUrl": "/system/20231103_LinuxAlpineRustDeskServer.html#configuration-de-ssh-sur-le-conteneur-alpine-linux"
+  },"9": {
+    "doc": "RustDesk - Créer un serveur sous Alpine Linux",
+    "title": "Récupération de l’IP du serveur pour la connexion SSH",
+    "content": "Pour obtenir l’adresse IP du serveur et vous connecter en SSH, utilisez la commande suivante : . ip a . ",
+    "url": "/system/20231103_LinuxAlpineRustDeskServer.html#r%C3%A9cup%C3%A9ration-de-lip-du-serveur-pour-la-connexion-ssh",
+    
+    "relUrl": "/system/20231103_LinuxAlpineRustDeskServer.html#récupération-de-lip-du-serveur-pour-la-connexion-ssh"
+  },"10": {
+    "doc": "RustDesk - Créer un serveur sous Alpine Linux",
+    "title": "Téléchargement et installation des binaires RustDesk",
+    "content": "Pour télécharger et installer les binaires de RustDesk, suivez les étapes ci-dessous : . # Créez un utilisateur RustDesk adduser -g \"rustdesk\" rustdesk # Créez un dossier pour stocker la base de données et les clés de chiffrement RustDesk mkdir -p /var/lib/rustdesk # Accordez les autorisations nécessaires à l'utilisateur RustDesk pour le répertoire chown -R rustdesk:rustdesk /var/lib/rustdesk/ # Créez le répertoire /tmp/rustdesk mkdir -p /tmp/rustdesk # Téléchargez les binaires Linux de RustDesk dans le répertoire temporaire wget https://github.com/rustdesk/rustdesk-server/releases/latest/download/rustdesk-server-linux-amd64.zip -P /tmp/rustdesk/ # Décompressez les binaires dans le répertoire temporaire unzip /tmp/rustdesk/rustdesk-server-linux-amd64.zip -d /tmp/rustdesk/ # Vérifiez l'exécution correct et la version des binaires cd /tmp/rustdesk/amd64/ &amp;&amp; ./hbbr -V ; ./hbbs -V # Copiez les binaires dans le répertoire des programmes installés sur le système cp /tmp/rustdesk/amd64/* /usr/bin/ . ℹ️ Le port 21116 est le seul qui doit être impérativement autorisé en TCP et UDP. Pour être plus précis, voici comment les ports sont utilisés d’après la documentation officielle: . - 21115 est utilisé pour tester le type de NAT. - 21116/UDP est utilisé pour l'enregistrement de l'ID et le service heartbeat. - 21116/TCP est utilisé pour le service de connexion. - 21117 est utilisé pour les services de relais. - 21118 et 21119 sont utilisés pour les clients Web, donc ces deux ports ne sont pas forcément nécessaires. ",
+    "url": "/system/20231103_LinuxAlpineRustDeskServer.html#t%C3%A9l%C3%A9chargement-et-installation-des-binaires-rustdesk",
+    
+    "relUrl": "/system/20231103_LinuxAlpineRustDeskServer.html#téléchargement-et-installation-des-binaires-rustdesk"
+  },"11": {
+    "doc": "RustDesk - Créer un serveur sous Alpine Linux",
+    "title": "Création des services hbbs et hbbr sous OpenRC",
+    "content": "Pour créer les services hbbs et hbbr sous OpenRC, vous pouvez utiliser les scripts suivant : . Service hbbs . #!/sbin/openrc-run # /etc/init.d/hbbs directory=\"/var/lib/rustdesk\" description=\"Serveur de relais RustDesk\" command_background=\"yes\" pidfile=\"/var/run/hbbs.pid\" command=\"/usr/bin/hbbs\" command_args=\"-k _\" user_homedir=\"/home/rustdesk\" command_user=\"rustdesk:rustdesk\" output_log=\"/dev/null\" error_log=\"/dev/null\" depend() { need localmount use net } start_pre() { checkpath --directory $output_log checkpath --directory $error_log } . Service hbbr . #!/sbin/openrc-run # /etc/init.d/hbbr directory=\"/var/lib/rustdesk\" description=\"Service RustDesk ID\" pidfile=\"/var/run/hbbr.pid\" command=\"/usr/bin/hbbr\" command_args=\"\" command_user=\"rustdesk:rustdesk\" command_background=\"yes\" output_log=\"/dev/null\" error_log=\"/dev/null\" depend() { need localmount use net } start_pre() { checkpath --directory $output_log checkpath --directory $error_log } . ",
+    "url": "/system/20231103_LinuxAlpineRustDeskServer.html#cr%C3%A9ation-des-services-hbbs-et-hbbr-sous-openrc",
+    
+    "relUrl": "/system/20231103_LinuxAlpineRustDeskServer.html#création-des-services-hbbs-et-hbbr-sous-openrc"
+  },"12": {
+    "doc": "RustDesk - Créer un serveur sous Alpine Linux",
+    "title": "Configuration des services OpenRC",
+    "content": "Pour configurer les services OpenRC, exécutez les commandes suivantes : . chmod +x /etc/init.d/hbb* rc-update add hbbr rc-update add hbbs rc-service hbbr restart rc-service hbbs restart . ",
+    "url": "/system/20231103_LinuxAlpineRustDeskServer.html#configuration-des-services-openrc",
+    
+    "relUrl": "/system/20231103_LinuxAlpineRustDeskServer.html#configuration-des-services-openrc"
+  },"13": {
+    "doc": "RustDesk - Créer un serveur sous Alpine Linux",
+    "title": "Vérification du serveur RustDesk",
+    "content": "Pour vérifier que le serveur RustDesk fonctionne correctement l’on peut utiliser les commandes suivantes : . # Liste des processus en temps réel avec htop et installation de htop si la commande n'existe pas htop || apk add htop # Liste des fichiers de basse de donnéer et des clés de chiffrement du serveur RustDesk ls /var/lib/rustdesk # Affichage de la clé publique que les administrateurs doivent utiliser pour prendre la main sur un post cat /var/lib/rustdesk/id_ed25519.pub . ⚠️ La clé publique, générée dans le fichier id_ed25519.pub permet de prendre le contrôle à distance des autres ordinateurs connectés au serveur. Dans l’optique où nous voulons être les seuls à avoir la capacité de prendre le contrôle à distance, cette clé doit donc rester connue uniquement du service informatique. ⚠️ . Si un utilisateur tente de prendre la main à distance sur un autre poste via son ID il obtiendra l’erreur Discordance des clés. ",
+    "url": "/system/20231103_LinuxAlpineRustDeskServer.html#v%C3%A9rification-du-serveur-rustdesk",
+    
+    "relUrl": "/system/20231103_LinuxAlpineRustDeskServer.html#vérification-du-serveur-rustdesk"
+  },"14": {
+    "doc": "RustDesk - Créer un serveur sous Alpine Linux",
+    "title": "Exécution manuelle des binaires RustDesk",
+    "content": "Si, pour une raison quelconque, le service RustDesk ne démarre pas, vous pouvez toujours exécuter manuellement les binaires pour effectuer des tests : . # Accédez au répertoire contenant la base de données SQLite3 et les clés id_ed25519 cd /var/lib/rustdesk # Exécutez les binaires manuellement pour effectuer des tests hbbs 0.0.0.0 -k _ hbbr -k _ . Sources : . | 📝https://rustdesk.com/docs/en/ | 📝https://www.it-connect.fr/rustdesk-lalternative-open-source-a-teamviewer-que-lon-peut-auto-heberger/ | 📝https://wiki.alpinelinux.org/wiki/Setting_up_a_new_user | 📝https://github.com/OpenRC/openrc/blob/master/service-script-guide.md | 📝https://rebootinformatique.org/tutos/cours/fichiers_systeme/co/arborescence.html | . ",
+    "url": "/system/20231103_LinuxAlpineRustDeskServer.html#ex%C3%A9cution-manuelle-des-binaires-rustdesk",
+    
+    "relUrl": "/system/20231103_LinuxAlpineRustDeskServer.html#exécution-manuelle-des-binaires-rustdesk"
+  },"15": {
+    "doc": "RustDesk - Créer un serveur sous Alpine Linux",
+    "title": "RustDesk - Créer un serveur sous Alpine Linux",
+    "content": ". ",
+    "url": "/system/20231103_LinuxAlpineRustDeskServer.html",
+    
+    "relUrl": "/system/20231103_LinuxAlpineRustDeskServer.html"
+  },"16": {
+    "doc": "disque-dur-en-collision-de-signature",
+    "title": "disque-dur-en-collision-de-signature",
+    "content": "1) Ouvrir une invitation avec les droits administrateur . 2) Lancer Diskpart dans l’invitation de commande . diskpart . 3) Lister les disques durs disponibles . list disk . 4) Sélectionnez le disque dur hors connexion . select disk 3 . Changer 3 par le numéro du disque dur hors connexion, attention à ne pas vous tromper de disque. 5) Afficher l’ ID du disque . uniqueid disk . 6) Choisir un nouvel ID, le plus simple est de recopier l’ancien ID en modifiant un digit (digit devant être compris entre 0 et 9 et a et f) exemple: ancien ID -&gt; 01E87CE0 -&gt; nouvel ID 01E87CE1 (0 remplacé par 1) . uniqueid disk ID=01E87CE1 . 7) Vérifier que le nouvel ID est bien pris en compte . uniqueid disk . 8) Il ne reste plus qu’à déconnecter/reconnecter le disque dur, il devrait de nouveaux être utilisables. microsoft.com . 2023-12-31 02:11:26 +0200 . ",
+    "url": "/autre/disque-dur-en-collision-de-signature.html",
+    
+    "relUrl": "/autre/disque-dur-en-collision-de-signature.html"
+  },"17": {
+    "doc": "system",
+    "title": "system",
+    "content": " ",
+    "url": "/system/",
+    
+    "relUrl": "/system/"
+  },"18": {
+    "doc": "autre",
+    "title": "autre",
+    "content": " ",
+    "url": "/autre/",
+    
+    "relUrl": "/autre/"
+  },"19": {
+    "doc": "Accueil",
+    "title": "Accueil",
+    "content": "Ce site est un modèle minimaliste pour créer un site Jekyll qui utilise le thème Just the Docs. Vous pouvez facilement configurer le site et le crée créé pour qu’il soit publié sur GitHub Pages - le fichier README explique comment le faire, ainsi que d’autres détails. Si Jekyll est installé sur votre serveur, vous pouvez également construire le site en local. Le fichier README explique également comment déployer le site en locale sur une plateforme différente de GitHub Pages ici AlpineLinux. Plus spécifiquement, le site créé : . | utilise une approche basée sur les gemmes, c’est-à-dire qu’il utilise un Gemfile et charge la gemme just-the-docs | utilise le flux de travail [GitHub Pages / Actions] pour construire et publier le site sur GitHub Pages | utilise ruby et lighttpd pour le self-hosts | . Mis à part cela, vous êtes libre de personnaliser les sites que vous créez avec ce modèle, comme bon vous semble. Vous pouvez facilement changer les versions de just-the-docs et de Jekyll qu’il utilise, ainsi qu’ajouter d’autres plugins. Consultez le documentation pour en savoir plus sur l’utilisation de ce thème. ",
+    "url": "/",
+    
+    "relUrl": "/"
+  },"20": {
+    "doc": "reseau",
+    "title": "reseau",
+    "content": " ",
+    "url": "/reseau/",
+    
+    "relUrl": "/reseau/"
+  },"21": {
+    "doc": "linux",
+    "title": "linux",
+    "content": " ",
+    "url": "/system/linux.html",
+    
+    "relUrl": "/system/linux.html"
+  },"22": {
+    "doc": "windows-client",
+    "title": "windows-client",
+    "content": " ",
+    "url": "/system/windows.html",
+    
+    "relUrl": "/system/windows.html"
+  }
+}
