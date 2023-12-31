@@ -113,7 +113,7 @@
   },"16": {
     "doc": "disque-dur-en-collision-de-signature",
     "title": "disque-dur-en-collision-de-signature",
-    "content": "1) Ouvrir une invitation avec les droits administrateur . 2) Lancer Diskpart dans l’invitation de commande . diskpart . 3) Lister les disques durs disponibles . list disk . 4) Sélectionnez le disque dur hors connexion . select disk 3 . Changer 3 par le numéro du disque dur hors connexion, attention à ne pas vous tromper de disque. 5) Afficher l’ ID du disque . uniqueid disk . 6) Choisir un nouvel ID, le plus simple est de recopier l’ancien ID en modifiant un digit (digit devant être compris entre 0 et 9 et a et f) exemple: ancien ID -&gt; 01E87CE0 -&gt; nouvel ID 01E87CE1 (0 remplacé par 1) . uniqueid disk ID=01E87CE1 . 7) Vérifier que le nouvel ID est bien pris en compte . uniqueid disk . 8) Il ne reste plus qu’à déconnecter/reconnecter le disque dur, il devrait de nouveaux être utilisables. microsoft.com . 2023-12-31 03:00:45 +0200 . ",
+    "content": "1) Ouvrir une invitation avec les droits administrateur . 2) Lancer Diskpart dans l’invitation de commande . diskpart . 3) Lister les disques durs disponibles . list disk . 4) Sélectionnez le disque dur hors connexion . select disk 3 . Changer 3 par le numéro du disque dur hors connexion, attention à ne pas vous tromper de disque. 5) Afficher l’ ID du disque . uniqueid disk . 6) Choisir un nouvel ID, le plus simple est de recopier l’ancien ID en modifiant un digit (digit devant être compris entre 0 et 9 et a et f) exemple: ancien ID -&gt; 01E87CE0 -&gt; nouvel ID 01E87CE1 (0 remplacé par 1) . uniqueid disk ID=01E87CE1 . 7) Vérifier que le nouvel ID est bien pris en compte . uniqueid disk . 8) Il ne reste plus qu’à déconnecter/reconnecter le disque dur, il devrait de nouveaux être utilisables. microsoft.com . 2023-12-31 03:39:47 +0200 . ",
     "url": "/autre/disque-dur-en-collision-de-signature.html",
     
     "relUrl": "/autre/disque-dur-en-collision-de-signature.html"
@@ -133,26 +133,33 @@
     "relUrl": "/autre/"
   },"19": {
     "doc": "Accueil",
+    "title": "Bienvenue sur Adminman.fr",
+    "content": "Ici, vous trouverez une vaste collection de ressources, guides, tutoriels à destination des professionnels de l’informatique. Que vous soyez administrateur système, développeur, ou simplement curieux en quête de connaissances, explorez notre bibliothèque et profitez d’un accès facile aux informations nécessaires pour exceller dans votre domaine. Rejoignez-nous sur GitHub et plongez dans un océan de connaissances informatiques à portée de clic. ",
+    "url": "/#bienvenue-sur-adminmanfr",
+    
+    "relUrl": "/#bienvenue-sur-adminmanfr"
+  },"20": {
+    "doc": "Accueil",
     "title": "Accueil",
-    "content": "Ce site est un modèle minimaliste pour créer un site Jekyll qui utilise le thème Just the Docs. Vous pouvez facilement configurer le site et le crée créé pour qu’il soit publié sur GitHub Pages - le fichier README explique comment le faire, ainsi que d’autres détails. Si Jekyll est installé sur votre serveur, vous pouvez également construire le site en local. Le fichier README explique également comment déployer le site en locale sur une plateforme différente de GitHub Pages ici AlpineLinux. Plus spécifiquement, le site créé : . | utilise une approche basée sur les gemmes, c’est-à-dire qu’il utilise un Gemfile et charge la gemme just-the-docs | utilise le flux de travail [GitHub Pages / Actions] pour construire et publier le site sur GitHub Pages | utilise ruby et lighttpd pour le self-hosts | . Mis à part cela, vous êtes libre de personnaliser les sites que vous créez avec ce modèle, comme bon vous semble. Vous pouvez facilement changer les versions de just-the-docs et de Jekyll qu’il utilise, ainsi qu’ajouter d’autres plugins. Consultez le documentation pour en savoir plus sur l’utilisation de ce thème. ",
+    "content": " ",
     "url": "/",
     
     "relUrl": "/"
-  },"20": {
+  },"21": {
     "doc": "reseau",
     "title": "reseau",
     "content": " ",
     "url": "/reseau/",
     
     "relUrl": "/reseau/"
-  },"21": {
+  },"22": {
     "doc": "linux",
     "title": "linux",
     "content": " ",
     "url": "/system/linux.html",
     
     "relUrl": "/system/linux.html"
-  },"22": {
+  },"23": {
     "doc": "windows-client",
     "title": "windows-client",
     "content": " ",
