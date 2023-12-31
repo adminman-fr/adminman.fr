@@ -1,6 +1,7 @@
 title: Documentation
 description: Site de documentation informatique
 theme: just-the-docs
+remote_theme: just-the-docs
 
 plugins:
   - jekyll-last-modified-at
