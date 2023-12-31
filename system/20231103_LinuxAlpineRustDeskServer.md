@@ -4,7 +4,6 @@ title: RustDesk - Créer un serveur sous Alpine Linux
 parent: linux
 grand_parent: system
 ---
----
 ## Créer un serveur RustDesk sous Alpine Linux
 ⏩ Pas le temps ? Faites un copier-coller des deux commandes ci-dessous pour créer un serveur RustDesk sous Alpine Linux.
 

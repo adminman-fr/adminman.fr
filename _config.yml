@@ -2,6 +2,12 @@ title: Documentation
 description: Site de documentation informatique
 theme: just-the-docs
 
+plugins:
+  - jekyll-last-modified-at
+# Optional. The default date format, used if none is specified in the tag.
+last-modified-at:
+    date-format: '%d %B %Y'
+
 # Aux links for the upper right navigation
 aux_links:
   "adminman sur GitHub":
